@@ -36,20 +36,20 @@ public class CountingGenerator {
         }
     }
 
-    public static class String implements Generator<String>{
+    public static class String implements Generator<java.lang.String> {
 
         private int length = 7;
         Generator<java.lang.Character> cg = new Character();
-        public String(char[] buf){}
+        public String(){}
         public String(int length) {this.length = length;}
 
-        public String next() {
+        public java.lang.String next() {
             char[] buf = new char[length];
             for (int i = 0; i < length; i++) {
                 buf[i] = cg.next();
 
             }
-            return new String(buf);
+            return new java.lang.String(buf);
         }
     }
 
